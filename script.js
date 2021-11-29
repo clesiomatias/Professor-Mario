@@ -9,10 +9,13 @@ const req = () => {
 
   request.onload = function () {
     var conteudos = request.response;
-    var nomes = conteudos.map((item) => item.name.split(".").shift());
+    var nomes = conteudos.map((item) => item.name);
+
     nomes.map((item) => {
-      let elemento = document.createElement("h2");
-      elemento.innerHTML = item;
+      let elemento = document.createElement("a");
+      elemento.innerHTML = item.split(".").shift();
+      elemento.href = `https://github.com/ProfMLE/Rep01/blob/master/${item}`;
+      elemento.target = "blank";
       divArtigos.appendChild(elemento);
     });
   };
