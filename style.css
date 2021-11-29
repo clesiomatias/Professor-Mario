@@ -82,6 +82,7 @@
   margin: 0;
 }
 .b1 {
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
