@@ -1,5 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .artigos {
   display: flex;
+  width: 100%;
   flex-direction: row;
   gap: 25px;
   background-color: azure;
@@ -18,4 +25,83 @@
   border-radius: 5px;
   font-family: Roboto, sans-serif;
   font-size: 18px;
+}
+@media screen and (max-width: 640px) {
+  .artigos a {
+    flex-wrap: nowrap;
+    width: 200px;
+    max-width: 200px;
+    font-size: 14px;
+    background-color: rgb(224, 243, 243);
+  }
+}
+.sobre {
+  font-family: Roboto, sans-serif;
+  display: flex;
+  margin: 15px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  line-height: 2rem;
+}
+.sobre a {
+  font-size: larger;
+  text-decoration: none;
+  color: rgb(105, 100, 100);
+}
+.imgML {
+  width: 25%;
+  border-radius: 40%;
+}
+.topo {
+  font-family: Roboto, sans-serif;
+  padding-right: 25px;
+  background-color: azure;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.topo a {
+  font-size: larger;
+  text-decoration: none;
+  color: rgb(105, 100, 100);
+}
+.IM {
+  font-family: Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.IM strong {
+  margin-top: 10px;
+}
+.bodyA {
+  background-color: rgb(245, 245, 245);
+  margin: 0;
+}
+.b1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Roboto, sans-serif;
+  color: azure;
+}
+.cabecalho {
+  background-color: rgb(0, 204, 255);
+  margin-bottom: 15px;
+  min-height: 5rem;
+}
+.naveg a {
+  text-decoration: none;
+  font-family: Roboto, sans-serif;
+  font-size: 1rem;
+  color: rgb(255, 249, 249);
+}
+.naveg {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }

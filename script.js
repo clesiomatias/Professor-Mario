@@ -15,7 +15,7 @@ const req = () => {
       let elemento = document.createElement("a");
       elemento.innerHTML = item.split(".").shift();
       elemento.href = `https://github.com/ProfMLE/Rep01/blob/master/${item}`;
-      elemento.target = "blank";
+      elemento.target = "_blank";
       divArtigos.appendChild(elemento);
     });
   };
