@@ -8,6 +8,7 @@
 }
 .artigos a {
   text-decoration: none;
+  color: rgb(93, 91, 91);
   display: flex;
   min-width: 375px;
   min-height: 50px;
