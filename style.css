@@ -151,3 +151,6 @@ footer {
   flex-direction: row;
   gap: 2rem;
 }
+.titulo {
+  text-decoration: underline;
+}
