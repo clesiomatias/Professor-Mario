@@ -61,6 +61,21 @@
   .IM {
     margin-right: 50px;
   }
+  .livros {
+    margin-left: 30%;
+  }
+  .contatos-autor h1 {
+    font-size: 22px;
+  }
+  .contatos-autor {
+    gap: 25px;
+  }
+  .links-contatos {
+    flex-direction: column;
+  }
+  .linkrs {
+    font-size: 12px !important;
+  }
 }
 .sobre {
   font-family: Roboto, sans-serif;
@@ -72,10 +87,15 @@
   text-align: justify;
   line-height: 2rem;
 }
+.livros {
+  width: 150px;
+  margin-right: 85%;
+}
 .sobre a {
   font-size: larger;
+  font-weight: 600;
   text-decoration: none;
-  color: rgb(105, 100, 100);
+  color: rgb(8, 1, 63);
 }
 .imgML {
   width: 25%;
@@ -153,4 +173,43 @@ footer {
 }
 .titulo {
   text-decoration: underline;
+}
+.contatos-autor {
+  background-color: rgb(0, 153, 255);
+  border-top: solid blue 2px;
+  border-bottom: solid blue 2px;
+  margin-bottom: 5px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 98.9vw;
+  height: 150px;
+  font-family: Roboto, sans-serif;
+  color: white;
+}
+.dots {
+  color: blue;
+  font-weight: 900;
+}
+.links-contatos {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.links-contatos a {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  font-family: Roboto, sans-serif;
+  color: azure;
+  font-size: 26px;
+  text-decoration: none;
+}
+.links-contatos a i {
+  margin-right: 10px;
+}
+.links-contatos div {
+  margin-left: 35px;
+}
+.contatos-autor img {
+  margin-right: 25px;
 }
