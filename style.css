@@ -213,3 +213,8 @@ footer {
 .contatos-autor img {
   margin-right: 25px;
 }
+.gettrIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.3rem;
+}
