@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  background-color: aquamarine;
+}
 
 .artigos {
   display: flex;
@@ -217,4 +220,26 @@ footer {
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 0.3rem;
+}
+.ultimo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: aquamarine;
+}
+.ultimo-artigo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 3rem;
+  border: 2px solid rgb(0, 26, 255);
+  border-radius: 10px;
+}
+.ultimo-artigo a {
+  text-decoration: none;
+  font-family: Roboto, sans-serif;
+  font-size: large;
+  font-weight: bold;
 }

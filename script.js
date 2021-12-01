@@ -1,7 +1,6 @@
 var divArtigos = document.querySelector(".artigos");
 var ultimo = document.querySelector(".ultimo-artigo");
 const post = (endereco) => {
-  var resp;
   let requestURL = endereco;
   let request = new XMLHttpRequest();
   request.open("GET", requestURL);
@@ -10,8 +9,13 @@ const post = (endereco) => {
 
   request.onload = function () {
     let resposta = request.response;
-    console.log(resposta.files[0].filename);
-    console.log(resposta.files[0].blob_url);
+    let nome = resposta.files[0].filename.split(".").shift();
+    let direcao = resposta.files[0].blob_url;
+    let elemento = document.createElement("a");
+    elemento.innerHTML = nome;
+    elemento.href = direcao;
+    elemento.target = "_blank";
+    ultimo.appendChild(elemento);
   };
 };
 
