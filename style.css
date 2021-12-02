@@ -76,8 +76,17 @@ body {
   .links-contatos {
     flex-direction: column;
   }
+  .links-contatos div {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
   .linkrs {
     font-size: 12px !important;
+  }
+  .gettrIcon {
+    width: 10px !important;
+    height: 10px !important;
   }
 }
 .sobre {
@@ -186,7 +195,7 @@ footer {
   display: flex;
   justify-content: space-between;
   width: 98.9vw;
-  height: 150px;
+  height: 170px;
   font-family: Roboto, sans-serif;
   color: white;
 }
