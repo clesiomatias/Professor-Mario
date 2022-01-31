@@ -128,7 +128,9 @@ footer {
   gap: 2rem;
 }
 .titulo {
+  color:#0000EE;
   text-decoration: underline;
+  font-family: Roboto, sans-serif;
 }
 .contatos-autor {
   background-color: rgb(0, 153, 255);
@@ -226,6 +228,71 @@ footer {
 .colaboreDiv img {
   width: 125px;
 }
+.mLivros{
+  width: 25%;
+  margin-left: 30%;
+}
+.containerLivro {
+  background-color: #d4f7eb;
+  margin-top: 15px;
+  display: flex;
+  height: 86vh;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.itemLivro{
+  border: #0000EE solid 3px;
+  padding: 3px;
+  width: 75%;
+  height: 80%;
+  
+}
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: transparent;
+  z-index: 99999;
+  opacity:0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal:target{
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal>p{
+  background-color: #d4f7eb;
+  font-family: Roboto, sans-serif;
+  width: 60%;
+  padding: 10px;
+  text-align: justify;
+  color: #0000EE;
+
+}
+.fechar {
+ 
+  width: 30px;
+  right: -15px;
+  top: -20px;
+  text-align: center;
+  line-height: 30px;
+  margin-bottom: 350px;
+  background: #ff4545;
+  border-radius: 50%;
+  font-size: 16px;
+  color: #8d0000;
+}
+
 @media screen and (max-width: 640px) {
   .contatos-autor h1 {
     margin-bottom: 10px;
