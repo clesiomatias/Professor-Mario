@@ -230,6 +230,10 @@ html, body {height:100%;}
 }
 .mLivros{
   width: 25%;
+  margin-left: 20%;
+}
+.mLogica{
+  width: 60%;
   margin-left: 30%;
 }
 .containerLivro {
