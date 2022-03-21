@@ -296,6 +296,9 @@ html, body {height:100%;}
   font-size: 16px;
   color: #8d0000;
 }
+.icone{
+  margin:40px;
+}
 
 @media screen and (max-width: 640px) {
   .contatos-autor h1 {
@@ -308,14 +311,8 @@ html, body {height:100%;}
     font-size: 14px;
     background-color: rgb(224, 243, 243);
   }
-  .b1 {
-    font-size: small;
-  }
-  .b1 h2 {
-    font-size: 14px;
-    text-align: center;
-  }
-
+  
+  
   .naveg a {
     font-size: 16px;
     font-weight: bold;
@@ -341,26 +338,45 @@ html, body {height:100%;}
     margin-left: 30%;
   }
   .contatos-autor h1 {
-    font-size: 16px;
+    font-size: 12px;
   }
   .contatos-autor {
     height: 140px;
-    padding: 20px;
-    gap: 5px;
+    padding: 0;
+    gap: 1px;
   }
   .links-contatos {
     flex-direction: column;
+    margin:0;
   }
-  .links-contatos div {
+  .bloco{
     display: flex;
     flex-direction: column;
-    gap: 1px;
-  }
-  .b2 {
-    display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
+    flex-wrap:wrap;
+    gap:2px;
+  }
+  .icone{
+    margin:0;
+  }
+  
+  .b1 {
+    display: flex;
+    flex-direction: row;
+    margin:0;
+  }
+  .b1 h2 {
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .b2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap
   }
   .linkrs {
     font-size: 12px !important;
