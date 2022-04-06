@@ -17,7 +17,7 @@ const post = (endereco) => {
     elemento.target = "_blank";
     let ultimo_elemento = document.createElement("a");
     ultimo_elemento.innerHTML = nome;
-    ultimo_elemento.href = `https://github.com/ProfMLE/Rep01/blob/master/${nome}`;
+    ultimo_elemento.href = `https://github.com/ProfMLE/Rep01/blob/master/${nome}.pdf`;
     ultimo_elemento.target = "_blank";
     ultimo.appendChild(ultimo_elemento);
   };
