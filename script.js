@@ -15,7 +15,11 @@ const post = (endereco) => {
     elemento.innerHTML = nome;
     elemento.href = direcao;
     elemento.target = "_blank";
-    ultimo.appendChild(elemento);
+    let ultimo_elemento = document.createElement("a");
+    ultimo_elemento.innerHTML = nome;
+    ultimo_elemento.href = `https://github.com/ProfMLE/Rep01/blob/master/${nome}`;
+    ultimo_elemento.target = "_blank";
+    ultimo.appendChild(ultimo_elemento);
   };
 };
 
@@ -34,7 +38,9 @@ const ultimoArtigo = () => {
     let primeiro = elementos.filter(
       (item) => item.payload.commits[0].message == "Add files via upload"
     )[0].payload.commits[0].url;
-    post(primeiro);
+    
+    post(primeiro)
+    
   };
 };
 
