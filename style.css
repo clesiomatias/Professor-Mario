@@ -109,9 +109,12 @@ body {
   justify-content: space-around;
   align-items: center;
 }
-html, body {height:100%;}
+html,
+body {
+  height: 100%;
+}
 .footer {
-   display: flex; 
+  display: flex;
   justify-content: space-around;
   align-items: center;
   min-height: 35px;
@@ -128,7 +131,7 @@ html, body {height:100%;}
   gap: 2rem;
 }
 .titulo {
-  color:#0000EE;
+  color: #0000ee;
   text-decoration: underline;
   font-family: Roboto, sans-serif;
 }
@@ -202,6 +205,10 @@ html, body {height:100%;}
 .bloco {
   padding: 0;
 }
+.bloco h1 {
+  font-size: 22px;
+  text-align: center;
+}
 .contatos-autor h1 {
   margin-bottom: 10px;
 }
@@ -228,11 +235,11 @@ html, body {height:100%;}
 .colaboreDiv img {
   width: 125px;
 }
-.mLivros{
-  width: 25%;
+.mLivros {
+  width: 55%;
   margin-left: 20%;
 }
-.mLogica{
+.mLogica {
   width: 60%;
   margin-left: 30%;
 }
@@ -245,12 +252,11 @@ html, body {height:100%;}
   justify-content: center;
   margin-bottom: 10px;
 }
-.itemLivro{
-  border: #0000EE solid 3px;
+.itemLivro {
+  border: #0000ee solid 3px;
   padding: 3px;
   width: 75%;
   height: 80%;
-  
 }
 .modal {
   position: fixed;
@@ -260,7 +266,7 @@ html, body {height:100%;}
   left: 0;
   background: transparent;
   z-index: 99999;
-  opacity:0;
+  opacity: 0;
   -webkit-transition: opacity 400ms ease-in;
   -moz-transition: opacity 400ms ease-in;
   transition: opacity 400ms ease-in;
@@ -270,21 +276,19 @@ html, body {height:100%;}
   align-items: center;
 }
 
-.modal:target{
+.modal:target {
   opacity: 1;
   pointer-events: auto;
 }
-.modal>p{
+.modal > p {
   background-color: #d4f7eb;
   font-family: Roboto, sans-serif;
   width: 60%;
   padding: 10px;
   text-align: justify;
-  color: #0000EE;
-
+  color: #0000ee;
 }
 .fechar {
- 
   width: 30px;
   right: -15px;
   top: -20px;
@@ -296,8 +300,13 @@ html, body {height:100%;}
   font-size: 16px;
   color: #8d0000;
 }
-.icone{
-  margin:40px;
+.icone {
+  font-size: 80px;
+  margin: 10px;
+}
+.minicursos {
+  display: flex;
+  flex-direction: row;
 }
 
 @media screen and (max-width: 640px) {
@@ -311,8 +320,7 @@ html, body {height:100%;}
     font-size: 14px;
     background-color: rgb(224, 243, 243);
   }
-  
-  
+
   .naveg a {
     font-size: 16px;
     font-weight: bold;
@@ -347,36 +355,32 @@ html, body {height:100%;}
   }
   .links-contatos {
     flex-direction: column;
-    margin:0;
+    margin: 0;
   }
-  .bloco{
+  .bloco {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-wrap:wrap;
-    gap:2px;
+    flex-wrap: wrap;
+    gap: 2px;
   }
-  .icone{
-    margin:0;
-  }
-  
+
   .b1 {
     display: flex;
     flex-direction: row;
-    margin:0;
+    margin: 0;
   }
   .b1 h2 {
     font-size: 14px;
     text-align: center;
   }
-  
+
   .b2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap
   }
   .linkrs {
     font-size: 12px !important;
@@ -391,22 +395,32 @@ html, body {height:100%;}
   .colaboreDiv img {
     width: 60px;
   }
-  .modal>p{
+  .modal > p {
     display: flex;
     flex-wrap: wrap;
     font-size: small;
     height: 80vh;
     width: 90vw;
   }
-  .containerLivro{
+  .containerLivro {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     flex-wrap: wrap;
     gap: 5px;
   }
-  .itemLivro{
+  .itemLivro {
     width: 110px;
     height: 170px;
   }
-
+  .minicursos {
+    flex-direction: column;
+  }
+  .icone {
+    font-size: 40px;
+    margin: 20px;
+  }
+  .mLogica {
+    width: 120%;
+    margin: 0;
+  }
 }
