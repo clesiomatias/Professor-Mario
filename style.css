@@ -125,6 +125,10 @@ body {
 .contact-dev a {
   color: white;
 }
+.code {
+  text-decoration: none;
+  font-weight: 900;
+}
 .contact-dev {
   display: flex;
   flex-direction: row;
