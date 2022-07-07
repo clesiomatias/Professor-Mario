@@ -312,6 +312,10 @@ body {
   display: flex;
   flex-direction: row;
 }
+.tLogica {
+  display: none;
+  visibility: hidden;
+}
 
 @media screen and (max-width: 640px) {
   .contatos-autor h1 {
@@ -347,7 +351,7 @@ body {
     margin-right: 50px;
   }
   .livros {
-    margin-left: 30%;
+    margin-left: 20%;
   }
   .contatos-autor h1 {
     font-size: 12px;
@@ -367,7 +371,6 @@ body {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 2px;
   }
 
   .b1 {
@@ -424,7 +427,13 @@ body {
     margin: 20px;
   }
   .mLogica {
-    width: 120%;
-    margin: 0;
+    display: none;
+    visibility: hidden;
+  }
+  .tLogica {
+    font-size: 0.8rem;
+    text-align: center;
+    display: block;
+    visibility: visible;
   }
 }
