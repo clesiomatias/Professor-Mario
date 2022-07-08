@@ -432,6 +432,7 @@ body {
   }
   .tLogica {
     font-size: 0.8rem;
+    margin-top: 10px;
     text-align: center;
     display: block;
     visibility: visible;
