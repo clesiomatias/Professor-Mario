@@ -1,5 +1,6 @@
 var divArtigos = document.querySelector(".artigos");
 var ultimo = document.querySelector(".ultimo-artigo");
+
 const post = (endereco) => {
   let requestURL = endereco;
   let request = new XMLHttpRequest();
@@ -38,9 +39,8 @@ const ultimoArtigo = () => {
     let primeiro = elementos.filter(
       (item) => item.payload.commits[0].message == "Add files via upload"
     )[0].payload.commits[0].url;
-    
-    post(primeiro)
-    
+
+    post(primeiro);
   };
 };
 
