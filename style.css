@@ -437,7 +437,8 @@ body {
     display: block;
     visibility: visible;
   }
-  .redes{
-    tex
+  .redes {
+    display: none;
+    visibility: hidden;
   }
 }
