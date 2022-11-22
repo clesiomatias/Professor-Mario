@@ -114,6 +114,7 @@ body {
   height: 100%;
 }
 .footer {
+  width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
