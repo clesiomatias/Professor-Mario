@@ -81,6 +81,7 @@ body {
   background-color: rgb(245, 245, 245);
   margin: 0;
 }
+
 .b1 {
   margin-top: 0.5rem;
   display: flex;
@@ -170,6 +171,18 @@ body {
   color: azure;
   font-size: 26px;
   text-decoration: none;
+}
+.compre-aqui{
+  background: none;
+  border: none;
+}
+.compre-aqui a{
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #0000ee;
+}
+.compre-aqui a:hover{
+color: #8d0000;
 }
 .links-contatos a i {
   margin-right: 10px;
