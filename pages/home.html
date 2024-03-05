@@ -4,13 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="connect-src 'self' https://api.github.com">
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0841316259529797"
-      crossorigin="anonymous"
-    ></script>
+   
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
@@ -22,11 +20,11 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="icone-logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="shortcut icon" href="../media/imgs/icone-logo.png" type="image/x-icon" />
     <title>Professor Mario Leite</title>
   </head>
-  <body onload="req()">
+  <body >
     <div class="cabecalho">
       <nav class="naveg">
         <div class="b1">
@@ -76,6 +74,11 @@
       </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="../js/script.js"></script>
+      <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        req();
+      });
+    </script>
   </body>
 </html>
