@@ -230,14 +230,15 @@ function deleteFile(fileId) {
     .then((data) => {
       console.log("Sucesso:", data);
       alert("Arquivo deletado com sucesso!");
-      // Recarrega a lista de arquivos após a exclusão
-      loadFiles();
+      // Recarrega a página após a exclusão bem-sucedida do arquivo
+      location.reload();
     })
     .catch((error) => {
       console.error("Erro:", error);
       alert("Erro ao deletar o arquivo!");
     });
 }
+
 
 // Verifica em qual página estamos e decide qual função de carregamento de arquivos chamar
 if (document.querySelector(".files-content-download")) {
