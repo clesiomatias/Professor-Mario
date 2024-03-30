@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Security-Policy" content="connect-src 'self' https://api.github.com">
+    <meta http-equiv="Content-Security-Policy" content="http://0.0.0.0:5000">
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,22 +26,22 @@
     <title>Professor Mario Leite</title>
   </head>
   <body >
-    <div class="cabecalho">
-      <nav class="naveg">
-        <div class="b1">
-          <h1 class="titulo">Prof. Mário Leite</h1>
-          <h2>Artigos sobre Programação</h2>
+    <div class="loginWrapper">
+      <form id="login-form" method="post">
+        <img class="img_logo" src="/media/imgs/logo.png" alt="Imagem de logo" >
+        <div class="division"></div>
+        <div class="form-group">
+          <label for="name">Nome</label>
+          <input type="text" id="name" name="name" required>
         </div>
-        <a href="../index.html">Sobre o Autor...</a>
-        <a href="/pages/arquivos.html" class="arquivos">Arquivos</a>
-      </nav>
+        <div class="form-group">
+          <label for="password">Senha</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit" id="botao-entrar">Entrar</button>
+      </form>
     </div>
 
-    <div class="ultimo-wrapper">
-      <div class="ultimo-artigo"></div>
-    </div>
-
-    <div class="artigos"></div>
     <div class="footer">
       <h4 class="dev">©<span class="current-date"></span> - Developed by @clesiofmatias</h4>
       <div class="contact-dev">
@@ -75,11 +76,6 @@
       </div>
     </div>
 
-    <script src="../js/script.js"></script>
-      <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        req();
-      });
-    </script>
+    <script src="/js/script.js"></script>
   </body>
 </html>

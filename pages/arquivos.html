@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Security-Policy" content="connect-src 'self' https://api.github.com">
+    <meta http-equiv="Content-Security-Policy" content="connect-src 'self' http://0.0.0.0:5000/files">
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,20 +28,23 @@
     <div class="cabecalho">
       <nav class="naveg">
         <div class="b1">
-          <h1 class="titulo">Prof. Mário Leite</h1>
-          <h2>Artigos sobre Programação</h2>
+          <a href="/index.html" style="text-decoration: none;"><h1 class="titulo">Prof. Mário Leite</h1></a>
+          <h2>Arquivos</h2>
         </div>
-        <a href="../index.html">Sobre o Autor...</a>
-        <a href="/pages/arquivos.html" class="arquivos">Arquivos</a>
+        <button class="btn_log"> <a href="login.html">Upload</a></button>
+       
       </nav>
+
+    </div>
+    <div style="display: flex;flex-direction:collumn; justify-content: center;align-items: center">
+    <div class="files-content">
+
+      </div>
+
     </div>
 
-    <div class="ultimo-wrapper">
-      <div class="ultimo-artigo"></div>
-    </div>
-
-    <div class="artigos"></div>
-    <div class="footer">
+ 
+    <div class="footer" style="bottom:0; position:fixed;">
       <h4 class="dev">©<span class="current-date"></span> - Developed by @clesiofmatias</h4>
       <div class="contact-dev">
         <a
@@ -77,9 +80,7 @@
 
     <script src="../js/script.js"></script>
       <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        req();
-      });
+      
     </script>
   </body>
 </html>
