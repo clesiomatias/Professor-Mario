@@ -175,13 +175,16 @@ function loadFilesWithDownloadButtons() {
         fileName.textContent = file.filename;
         fileItem.appendChild(fileName);
 
+        const downloadLink = document.createElement("a");
+        downloadLink.textContent = "Download";
+        downloadLink.href = `https://marleite.pythonanywhere.com/download/${file.id}`;
+        downloadLink.setAttribute("download", ""); // Adiciona o atributo download para permitir o download
+        downloadLink.setAttribute("target", "_blank"); // Abre o link em uma nova aba
+
         const downloadButton = document.createElement("button");
         downloadButton.textContent = "Download";
         downloadButton.addEventListener("click", function () {
-           window.open(
-             `https://marleite.pythonanywhere.com/download/${file.id}`,
-             "_blank"
-           );
+          downloadLink.click(); // Simula o clique no link de download
         });
 
         fileItem.appendChild(downloadButton);
@@ -195,8 +198,9 @@ function loadFilesWithDownloadButtons() {
     });
 }
 
+
 // Função para carregar e exibir a lista de arquivos com botões de exclusão
-function loadFilesWithDeleteButtons() {
+function loadFilesWithDownloadButtons() {
   fetch("https://marleite.pythonanywhere.com/files")
     .then((response) => {
       if (response.ok) {
@@ -217,10 +221,16 @@ function loadFilesWithDeleteButtons() {
         fileName.textContent = file.filename;
         fileItem.appendChild(fileName);
 
-        const deleteButton = document.createElement("button");
-        deleteButton.textContent = "Excluir";
-        deleteButton.addEventListener("click", () => deleteFile(file.id));
-        fileItem.appendChild(deleteButton);
+        const downloadButton = document.createElement("button");
+        downloadButton.textContent = "Download";
+        downloadButton.addEventListener("click", function () {
+          downloadFile(
+            `https://marleite.pythonanywhere.com/download/${file.id}`,
+            file.filename
+          );
+        });
+
+        fileItem.appendChild(downloadButton);
 
         filesContent.appendChild(fileItem);
       });
@@ -228,6 +238,25 @@ function loadFilesWithDeleteButtons() {
     .catch((error) => {
       console.error("Erro:", error);
       alert("Erro ao carregar os arquivos!");
+    });
+}
+
+function downloadFile(url, fileName) {
+  fetch(url)
+    .then((response) => response.blob())
+    .then((blob) => {
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.style.display = "none";
+      a.href = url;
+      a.download = fileName;
+      document.body.appendChild(a);
+      a.click();
+      window.URL.revokeObjectURL(url);
+    })
+    .catch((error) => {
+      console.error("Erro ao baixar o arquivo:", error);
+      alert("Erro ao baixar o arquivo!");
     });
 }
 
