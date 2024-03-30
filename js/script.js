@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
     uploadForm.addEventListener("submit", function (event) {
       event.preventDefault();
 
-      var uploader = document.getElementById("uploader").value;
+      var uploader = document.getElementById("file").value;
       var fileInput = document.getElementById("file");
       var file = fileInput.files[0];
 
@@ -138,48 +138,49 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-document.addEventListener("DOMContentLoaded", function () {
-  // Função para carregar e exibir a lista de arquivos
-  function loadFiles() {
-    fetch("http://0.0.0.0:5000/files")
-      .then((response) => response.json())
-      .then((data) => {
-        const filesContent = document.querySelector(".files-content");
-        filesContent.innerHTML = ""; // Limpa o conteúdo atual
 
-        data.forEach((file) => {
-         
-          const fileName = file.uploader;
-          const fileId = file.id;
-          
+// Função para carregar e exibir a lista de arquivos
+// Função para carregar e exibir a lista de arquivos com botões de download
+function loadFilesWithDownloadButtons() {
+  fetch("http://0.0.0.0:5000/files")
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Erro ao carregar os arquivos");
+      }
+    })
+    .then((data) => {
+      const filesContent = document.querySelector(".files-content");
+      filesContent.innerHTML = ""; // Limpa o conteúdo atual
 
-          const fileItem = document.createElement("div");
-          fileItem.classList.add("file-item");
+      data.forEach((file) => {
+        const fileItem = document.createElement("div");
+        fileItem.classList.add("file-item");
 
-          const fileNameElement = document.createElement("span");
-          fileNameElement.textContent = fileName;
+        const fileName = document.createElement("span");
+        fileName.textContent = file.filename;
+        fileItem.appendChild(fileName);
 
-          const downloadButton = document.createElement("button");
-          downloadButton.textContent = "Download";
-          downloadButton.addEventListener("click", function () {
-            window.location.href = `http://0.0.0.0:5000/download/${fileId}`;
-          });
-
-          fileItem.appendChild(fileNameElement);
-          fileItem.appendChild(downloadButton);
-
-          filesContent.appendChild(fileItem);
+        const downloadButton = document.createElement("button");
+        downloadButton.textContent = "Download";
+        downloadButton.addEventListener("click", function () {
+          window.location.href = `http://0.0.0.0:5000/download/${file.id}`;
         });
-      })
-      .catch((error) => {
-        console.error("Erro ao carregar a lista de arquivos:", error);
-      });
-  }
 
-  // Chama a função para carregar a lista de arquivos quando a página é carregada
-  loadFiles();
-});
-function loadFiles() {
+        fileItem.appendChild(downloadButton);
+
+        filesContent.appendChild(fileItem);
+      });
+    })
+    .catch((error) => {
+      console.error("Erro:", error);
+      alert("Erro ao carregar os arquivos!");
+    });
+}
+
+// Função para carregar e exibir a lista de arquivos com botões de exclusão
+function loadFilesWithDeleteButtons() {
   fetch("http://0.0.0.0:5000/files")
     .then((response) => {
       if (response.ok) {
@@ -214,31 +215,11 @@ function loadFiles() {
     });
 }
 
-// Função para deletar um arquivo
-function deleteFile(fileId) {
-  fetch(`http://0.0.0.0:5000/delete/${fileId}`, {
-    method: "DELETE",
-  })
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("Erro ao deletar o arquivo");
-      }
-    })
-    .then((data) => {
-      console.log("Sucesso:", data);
-      alert("Arquivo deletado com sucesso!");
-      // Recarrega a lista de arquivos após a exclusão
-      loadFiles();
-    })
-    .catch((error) => {
-      console.error("Erro:", error);
-      alert("Erro ao deletar o arquivo!");
-    });
-}
-
-if (document.querySelector(".files-content")) {
-  // Adiciona o event listener para carregar os arquivos quando a página é carregada
-  document.addEventListener("DOMContentLoaded", loadFiles);
+// Verifica em qual página estamos e decide qual função de carregamento de arquivos chamar
+if (document.querySelector(".files-content-download")) {
+  // Estamos na página "arquivos.html", então carregamos os arquivos com botões de download
+  document.addEventListener("DOMContentLoaded", loadFilesWithDownloadButtons);
+} else if (document.querySelector(".files-content-delete")) {
+  // Estamos na página "delete_files.html", então carregamos os arquivos com botões de exclusão
+  document.addEventListener("DOMContentLoaded", loadFilesWithDeleteButtons);
 }
