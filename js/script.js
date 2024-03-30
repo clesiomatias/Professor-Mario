@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
       formData.append("username", username);
       formData.append("password", password);
 
-      var url = "http://0.0.0.0:5000/login";
+      var url = "https://marleite.pythonanywhere.com/login";
       var request = new Request(url, {
         method: "POST",
         headers: {
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
       formData.append("uploader", uploader);
       formData.append("file", file);
 
-      fetch("http://0.0.0.0:5000/upload", {
+      fetch("https://marleite.pythonanywhere.com/upload", {
         method: "POST",
         body: formData,
       })
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Função para carregar e exibir a lista de arquivos
 // Função para carregar e exibir a lista de arquivos com botões de download
 function loadFilesWithDownloadButtons() {
-  fetch("http://0.0.0.0:5000/files")
+  fetch("https://marleite.pythonanywhere.com/files")
     .then((response) => {
       if (response.ok) {
         return response.json();
@@ -165,7 +165,7 @@ function loadFilesWithDownloadButtons() {
         const downloadButton = document.createElement("button");
         downloadButton.textContent = "Download";
         downloadButton.addEventListener("click", function () {
-          window.location.href = `http://0.0.0.0:5000/download/${file.id}`;
+          window.location.href = `https://marleite.pythonanywhere.com/download/${file.id}`;
         });
 
         fileItem.appendChild(downloadButton);
@@ -181,7 +181,7 @@ function loadFilesWithDownloadButtons() {
 
 // Função para carregar e exibir a lista de arquivos com botões de exclusão
 function loadFilesWithDeleteButtons() {
-  fetch("http://0.0.0.0:5000/files")
+  fetch("https://marleite.pythonanywhere.com/files")
     .then((response) => {
       if (response.ok) {
         return response.json();
