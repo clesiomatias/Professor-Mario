@@ -217,7 +217,7 @@ function loadFilesWithDeleteButtons() {
 
 // Função para deletar um arquivo
 function deleteFile(fileId) {
-  fetch(`http://0.0.0.0:5000/delete/${fileId}`, {
+  fetch(` https://marleite.pythonanywhere.com/delete/${fileId}`, {
     method: "DELETE",
   })
     .then((response) => {
