@@ -6,37 +6,50 @@ const post = (endereco) => {
     .then((response) => response.json())
     .then((data) => {
       let nome = data.files[0].filename.split(".").shift();
-
+      console.log(nome)
       let ultimo_elemento = document.createElement("a");
       ultimo_elemento.innerHTML = nome;
       ultimo_elemento.href = `https://github.com/ProfMLE/Rep01/blob/master/${nome}.pdf`;
       ultimo_elemento.target = "_blank";
       ultimo.appendChild(ultimo_elemento);
-    })
-    .catch((error) => console.error("Erro:", error));
+    }).catch((error) => console.error("Erro:", error));
 };
 
 const ultimoArtigo = () => {
   let requestURL = "https://api.github.com/users/ProfMLE/events";
 
-  fetch(requestURL)
+  return fetch(requestURL)
     .then((response) => response.json())
     .then((data) => {
       let elementos = data.filter((item) => item.repo.name == "ProfMLE/Rep01");
       if (elementos.length > 0) {
-              let primeiro = elementos[0].payload.commits[0].url;
-              post(primeiro);
-            } else {
-              console.log("Nenhum evento PushEvent encontrado para o repositório ProfMLE/Rep01.");
-            }
-          })     
-   
-    .catch((error) => console.error("Erro:", error));
+        let primeiro = elementos[1].payload.commits[0].url;
+        console.log('primeiro',primeiro)
+        return primeiro;
+      } else {
+        console.log(
+          "Nenhum evento PushEvent encontrado para o repositório ProfMLE/Rep01."
+        );
+        return null; // or whatever value you want to return in case of no matching data
+      }
+    })
+    .catch((error) => {
+      console.error("Erro:", error);
+      throw error; // rethrow the error to maintain the error chain
+    });
 };
+
 
   
   const req = () => {
-    ultimoArtigo();
+   ultimoArtigo()
+     .then((ultimourl) => {
+      
+       post(ultimourl);
+     })
+     .catch((error) =>
+       console.error("Erro ao obter a URL do último artigo:", error)
+     );
     var requestURL = "https://api.github.com/repos/ProfMLE/Rep01/contents/";
 
     fetch(requestURL)
