@@ -215,6 +215,30 @@ function loadFilesWithDeleteButtons() {
     });
 }
 
+// Função para deletar um arquivo
+function deleteFile(fileId) {
+  fetch(`http://0.0.0.0:5000/delete/${fileId}`, {
+    method: "DELETE",
+  })
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Erro ao deletar o arquivo");
+      }
+    })
+    .then((data) => {
+      console.log("Sucesso:", data);
+      alert("Arquivo deletado com sucesso!");
+      // Recarrega a lista de arquivos após a exclusão
+      loadFiles();
+    })
+    .catch((error) => {
+      console.error("Erro:", error);
+      alert("Erro ao deletar o arquivo!");
+    });
+}
+
 // Verifica em qual página estamos e decide qual função de carregamento de arquivos chamar
 if (document.querySelector(".files-content-download")) {
   // Estamos na página "arquivos.html", então carregamos os arquivos com botões de download
