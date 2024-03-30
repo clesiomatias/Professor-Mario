@@ -165,7 +165,10 @@ function loadFilesWithDownloadButtons() {
         const downloadButton = document.createElement("button");
         downloadButton.textContent = "Download";
         downloadButton.addEventListener("click", function () {
-          window.location.href = `https://marleite.pythonanywhere.com/download/${file.id}`;
+           window.open(
+             `https://marleite.pythonanywhere.com/download/${file.id}`,
+             "_blank"
+           );
         });
 
         fileItem.appendChild(downloadButton);
