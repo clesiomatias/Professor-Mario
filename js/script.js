@@ -200,7 +200,7 @@ function loadFilesWithDownloadButtons() {
 
 
 // Função para carregar e exibir a lista de arquivos com botões de exclusão
-function loadFilesWithDownloadButtons() {
+function loadFilesWithDeleteButtons() {
   fetch("https://marleite.pythonanywhere.com/files")
     .then((response) => {
       if (response.ok) {
@@ -221,16 +221,10 @@ function loadFilesWithDownloadButtons() {
         fileName.textContent = file.filename;
         fileItem.appendChild(fileName);
 
-        const downloadButton = document.createElement("button");
-        downloadButton.textContent = "Download";
-        downloadButton.addEventListener("click", function () {
-          downloadFile(
-            `https://marleite.pythonanywhere.com/download/${file.id}`,
-            file.filename
-          );
-        });
-
-        fileItem.appendChild(downloadButton);
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Excluir";
+        deleteButton.addEventListener("click", () => deleteFile(file.id));
+        fileItem.appendChild(deleteButton);
 
         filesContent.appendChild(fileItem);
       });
@@ -238,25 +232,6 @@ function loadFilesWithDownloadButtons() {
     .catch((error) => {
       console.error("Erro:", error);
       alert("Erro ao carregar os arquivos!");
-    });
-}
-
-function downloadFile(url, fileName) {
-  fetch(url)
-    .then((response) => response.blob())
-    .then((blob) => {
-      const url = window.URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.style.display = "none";
-      a.href = url;
-      a.download = fileName;
-      document.body.appendChild(a);
-      a.click();
-      window.URL.revokeObjectURL(url);
-    })
-    .catch((error) => {
-      console.error("Erro ao baixar o arquivo:", error);
-      alert("Erro ao baixar o arquivo!");
     });
 }
 
