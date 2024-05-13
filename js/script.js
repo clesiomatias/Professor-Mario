@@ -6,7 +6,7 @@ const post = (endereco) => {
     .then((response) => response.json())
     .then((data) => {
       let nome = data.files[0].filename.split(".").shift();
-      console.log(nome)
+      
       let ultimo_elemento = document.createElement("a");
       ultimo_elemento.innerHTML = nome;
       ultimo_elemento.href = `https://github.com/ProfMLE/Rep01/blob/master/${nome}.pdf`;
@@ -23,8 +23,8 @@ const ultimoArtigo = () => {
     .then((data) => {
       let elementos = data.filter((item) => item.repo.name == "ProfMLE/Rep01");
       if (elementos.length > 0) {
-        let primeiro = elementos[1].payload.commits[0].url;
-        console.log('primeiro',primeiro)
+        let primeiro = elementos[0].payload.commits[0].url;
+        
         return primeiro;
       } else {
         console.log(
